@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn3.vectorstock.com/i/1000x1000/20/92/home-icon-with-1000-medical-business-symbols-vector-10812092.jpg">
+  {% if title %}
+  <title>{{title}}</title>
+  {% else %}
+  <title>{{Neighborhood}}</title>
+  {% endif %}
+  {% block styles %}
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/base.css'%}">
+  {% endblock %}
+</head>
+
+<body>
+  {% include 'neigh/navbar.html' %}
+  {% block content %}
+  {% endblock %}
+  {% block scripts %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.sidenav').sidenav();
+      $('.modal').modal();
+    });
+  </script>
+  {% endblock %}
+</body>
+
+</html>
